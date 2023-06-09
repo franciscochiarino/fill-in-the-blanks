@@ -1,17 +1,19 @@
 import React from 'react';
 import { sentences, stories } from './db';
-import Sentence from './Sentence';
-import Story from './Story';
+import Text from './components/atoms/Text';
+import Sentence from './components/molecules/Sentence';
+import Story from './components/molecules/Story';
 
 const App = () => {
   return (
     <div className="has-background-white mb-6">
-      <div className="has-background-primary pt-4 pb-4 mb-4">
-        <h1 className="is-size-1 has-text-centered has-text-black has-text-weight-bold">Fill in the blanks</h1>
-      </div>
-      <div className="container">
-        <Sentence sentence={sentences[0]} />
-        <Story story={stories[0]} />
+      <Text.Heading text="Fill in the blanks" />
+      <hr/>
+      <div className="columns">
+        <div className="column is-10 is-offset-1">
+          <Sentence sentence={sentences[0]} />
+          <Story story={stories[0]} />
+        </div>
       </div>
     </div>
   )

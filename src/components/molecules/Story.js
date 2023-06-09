@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Text from '../atoms/Text';
 
 const Story = ({ story }) => {
   const [inputs, setInputs] = useState({});
@@ -43,21 +44,15 @@ const Story = ({ story }) => {
 
   return (
     <>
-      <h2 className="is-size-3">Story</h2>
+      <Text.SubHeading text="Story" />
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           { story.story.map((sentence, index) => {
             return (
               <>
-                <span key={index}>{sentence}</span>
+                <Text.Span key={index}>{sentence}</Text.Span>
                 {index !== story.story.length - 1 &&
-                  <input
-                    className="input is-primary is-small is-rounded is-2 ml-2 mr-2 has-text-centered"
-                    type="text"
-                    name={`blank${index}`}
-                    onChange={handleOnChange}
-                    style={{ width: '100px' }}
-                  />
+                  <Text.Input onChange={handleOnChange} name={`blank${index}`} />
                 }
               </>
             )
