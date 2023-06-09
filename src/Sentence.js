@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Sentence = ({ exercise }) => {
+const Sentence = ({ sentence }) => {
   const [answer, setAnswer] = useState('')
 
   const handleOnChange = (event) => {
@@ -8,7 +8,7 @@ const Sentence = ({ exercise }) => {
   }
 
   const handleOnClick = () => {
-    if (answer === exercise.word) {
+    if (answer === sentence.word) {
       alert('Correct!')
     } else {
       alert('Incorrect!')
@@ -17,10 +17,9 @@ const Sentence = ({ exercise }) => {
 
   return (
     <>
-      <h1>Exercise</h1>
-      <span>{ exercise.sentence[0] }</span>
+      <span>{ sentence.sentence[0] }</span>
       <input type="text" onChange={handleOnChange} />
-      <span>{ exercise.sentence[1] }</span>
+      <span>{ sentence.sentence[1] }</span>
       <button onClick={handleOnClick}>Submit</button>
     </>
   )
