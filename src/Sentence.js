@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Exercise = ({ exercise }) => {
+const Sentence = ({ exercise }) => {
   const [answer, setAnswer] = useState('')
 
   const handleOnChange = (event) => {
@@ -26,4 +26,4 @@ const Exercise = ({ exercise }) => {
   )
 }
 
-export default Exercise
+export default Sentence

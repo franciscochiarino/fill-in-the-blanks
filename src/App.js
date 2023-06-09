@@ -1,13 +1,13 @@
 import React from 'react';
 import exercises from './db';
-import Exercise from './Exercise';
+import Sentence from './Sentence';
 
 const App = () => {
   return (
     <div>
       <h1>Fill in the blanks</h1>
 
-      <Exercise exercise={exercises[0]} />
+      <Sentence exercise={exercises[0]} />
     </div>
   )
 }
