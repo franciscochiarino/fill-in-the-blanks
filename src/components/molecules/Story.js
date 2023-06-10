@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Text from '../atoms/Text';
+import Input from '../atoms/Input';
 
 const Story = ({ story }) => {
   const [inputs, setInputs] = useState({});
@@ -52,7 +53,7 @@ const Story = ({ story }) => {
               <>
                 <Text.Span key={index}>{sentence}</Text.Span>
                 {index !== story.story.length - 1 &&
-                  <Text.Input onChange={handleOnChange} name={`blank${index}`} />
+                  <Input onChange={handleOnChange} name={`blank${index}`} />
                 }
               </>
             )

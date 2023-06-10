@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Text from '../atoms/Text'
+import Input from '../atoms/Input'
 
 const Sentence = ({ sentence }) => {
   const [answer, setAnswer] = useState('')
@@ -23,7 +24,7 @@ const Sentence = ({ sentence }) => {
 
         <div className="mb-4">
           <Text.Span>{ sentence.sentence[0] }</Text.Span>
-          <Text.Input onChange={handleOnChange} />
+          <Input onChange={handleOnChange} />
           <Text.Span>{ sentence.sentence[1] }</Text.Span>
         </div>
 

@@ -16,22 +16,10 @@ const Span = ({ children }) => {
   )
 };
 
-const Input = ({ onChange, name }) => {
-  return (
-    <input
-      className="input is-primary is-small is-rounded ml-2 mr-2 has-text-centered"
-      type="text"
-      onChange={onChange}
-      name={name || 'answer'}
-      style={{ width: '100px', verticalAlign: 'middle' }}
-    />
-  )
-}
 
 const Text = {}
 Text.Heading = Heading;
 Text.SubHeading = SubHeading;
 Text.Span = Span;
-Text.Input = Input;
 
 export default Text;
