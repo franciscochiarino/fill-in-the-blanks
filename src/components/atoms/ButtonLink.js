@@ -1,13 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ButtonLink = ({ path, children }) => {
+  const location = useLocation();
+  const isActive = location.pathname === path;
+
   return (
-    <NavLink to={path} className="has-text-white">
-      <button className="button is-primary is-rounded ml-2 mr-2">
+    <Link to={path} className="has-text-white">
+      <button className={`button is-rounded ml-2 mr-2 ${isActive && 'is-primary'}`}>
         {children}
       </button>
-    </NavLink>
+    </Link>
   )
 }
 

@@ -3,6 +3,7 @@ import Text from '../atoms/Text';
 import ButtonLink from '../atoms/ButtonLink';
 
 const Navbar = () => {
+
   return (
     <>
       <Text.Heading>Fill in the blanks</Text.Heading>
