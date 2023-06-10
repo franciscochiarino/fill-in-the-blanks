@@ -1,18 +1,21 @@
 import React from 'react';
-import { sentences, stories } from './db';
-import Text from './components/atoms/Text';
-import Sentence from './components/molecules/Sentence';
-import Story from './components/molecules/Story';
+import { Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/molecules/Navbar';
+import Exercises from './components/templates/Exercises';
+import Admin from './components/templates/Admin';
 
 const App = () => {
   return (
     <div className="has-background-white mb-6">
-      <Text.Heading text="Fill in the blanks" />
-      <hr/>
+      <Navbar />
+
       <div className="columns">
         <div className="column is-10 is-offset-1">
-          <Sentence sentence={sentences[0]} />
-          <Story story={stories[0]} />
+          <Routes>
+            <Route path="/" element={<Exercises />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
         </div>
       </div>
     </div>
