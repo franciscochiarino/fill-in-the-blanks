@@ -13,7 +13,7 @@ const Sentence = ({ sentence }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (answer === sentence.word) {
+    if (answer === sentence.answer) {
       alert('Correct!')
     } else {
       alert('Incorrect!')
@@ -24,8 +24,6 @@ const Sentence = ({ sentence }) => {
     <>
       { sentence && (
         <section className="mb-6">
-          <Text.SubHeading>Sentence</Text.SubHeading>
-
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <Text.Span>{ sentence.sentence[0] }</Text.Span>

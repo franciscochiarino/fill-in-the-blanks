@@ -1,12 +1,28 @@
 import React, { useState } from 'react';
+import { db } from '../../../firebaseConfig';
+import { collection, addDoc } from 'firebase/firestore';
+
 import Text from '../../atoms/Text';
 import SubmitButton from '../../atoms/SubmitButton';
 
 const NewSentence = () => {
   const [sentence, setSentence] = useState('');
   const [answer, setAnswer] = useState('');
+  const sentencesRef = collection(db, 'sentences');
 
-  const handleSubmit = (event) => {};
+  const createSentence = async () => {
+
+    await addDoc(sentencesRef, {
+      sentence: sentence.split('_blank_'),
+      answer
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    createSentence();
+  };
 
   return (
     <div className="mb-6">
