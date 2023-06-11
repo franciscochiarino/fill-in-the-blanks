@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Text from '../../atoms/Text';
 import SubmitButton from '../../atoms/SubmitButton';
 
 const NewStory = () => {
+  const [headline, setHeadline] = useState('');
+  const [story, setStory] = useState('');
+  const [answers, setAnswers] = useState('');
+
   const handleSubmit = (event) => {};
 
   return (
@@ -16,21 +20,35 @@ const NewStory = () => {
         <div className="field">
           <label className="label">Headline</label>
           <div className="control">
-            <input className="input" type="text" placeholder="Headline" />
+            <input
+              type="text"
+              className="input"
+              placeholder="Headline"
+              onChange={(e) => setHeadline(e.target.value)}
+            />
           </div>
         </div>
 
         <div className="field">
           <label className="label">Story</label>
           <div className="control">
-            <textarea className="textarea" placeholder="Story"></textarea>
+            <textarea
+              className="textarea"
+              placeholder="Story"
+              onChange={(e) => setStory(e.target.value)}
+            ></textarea>
           </div>
         </div>
 
         <div className="field">
           <label className="label">Answers</label>
           <div className="control">
-            <input className="input" type="text" placeholder="Answers" />
+            <input
+              type="text"
+              className="input"
+              placeholder="Answers"
+              onChange={(e) => setAnswers(e.target.value)}
+            />
           </div>
         </div>
 

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Text from '../../atoms/Text';
 import SubmitButton from '../../atoms/SubmitButton';
 
 const NewSentence = () => {
+  const [sentence, setSentence] = useState('');
+  const [answer, setAnswer] = useState('');
+
   const handleSubmit = (event) => {};
 
   return (
@@ -18,7 +21,12 @@ const NewSentence = () => {
             <div className="field">
               <label className="label">Sentence</label>
               <div className="control">
-                <input className="input" type="text" placeholder="Sentence" />
+                <input
+                  type="text"
+                  className="input"
+                  placeholder="Sentence"
+                  onChange={(e) => setSentence(e.target.value)}
+                />
               </div>
             </div>
           </div>
@@ -27,7 +35,12 @@ const NewSentence = () => {
             <div className="field">
               <label className="label">Answer</label>
               <div className="control">
-                <input className="input" type="text" placeholder="Answer" />
+                <input
+                  type="text"
+                  className="input"
+                  placeholder="Answer"
+                  onChange={(e) => setAnswer(e.target.value)}
+                />
               </div>
             </div>
           </div>
