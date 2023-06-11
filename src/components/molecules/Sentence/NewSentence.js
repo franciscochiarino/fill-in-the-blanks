@@ -11,12 +11,15 @@ const NewSentence = () => {
   const sentencesRef = collection(db, 'sentences');
 
   const createSentence = async () => {
-    await addDoc(sentencesRef, {
-      sentence: sentence.split('_blank_'),
-      answer
-    });
-
-    alert('Sentence created!');
+    try {
+      await addDoc(sentencesRef, {
+        sentence: sentence.split('_blank_'),
+        answer
+      });
+      alert('Sentence created!');
+    } catch (error) {
+      alert(`Error adding document: ${error.message}`);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -43,6 +46,7 @@ const NewSentence = () => {
                   className="input"
                   placeholder="Sentence"
                   onChange={(e) => setSentence(e.target.value)}
+                  required
                 />
               </div>
             </div>
@@ -57,6 +61,7 @@ const NewSentence = () => {
                   className="input"
                   placeholder="Answer"
                   onChange={(e) => setAnswer(e.target.value)}
+                  required
                 />
               </div>
             </div>

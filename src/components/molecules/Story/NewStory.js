@@ -25,7 +25,12 @@ const NewStory = () => {
       answers: answersObject
     };
 
-    await addDoc(storiesRef, storyObject);
+    try {
+      await addDoc(storiesRef, storyObject);
+      alert('Story created!');
+    } catch (error) {
+      alert(`Error adding document: ${error.message}`);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -49,6 +54,7 @@ const NewStory = () => {
               className="input"
               placeholder="Headline"
               onChange={(e) => setHeadline(e.target.value)}
+              required
             />
           </div>
         </div>
@@ -60,6 +66,7 @@ const NewStory = () => {
               className="textarea"
               placeholder="Story"
               onChange={(e) => setStory(e.target.value)}
+              required
             ></textarea>
           </div>
         </div>
@@ -75,6 +82,7 @@ const NewStory = () => {
               className="input"
               placeholder="Answers"
               onChange={(e) => setAnswers(e.target.value)}
+              required
             />
           </div>
         </div>
