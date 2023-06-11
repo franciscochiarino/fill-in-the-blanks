@@ -1,6 +1,6 @@
 import React from 'react';
 import Text from '../atoms/Text';
-import ButtonLink from '../atoms/ButtonLink';
+import LinkButton from '../atoms/LinkButton';
 
 const Navbar = () => {
 
@@ -9,8 +9,8 @@ const Navbar = () => {
       <Text.Heading>Fill in the blanks</Text.Heading>
 
       <nav className="has-text-centered pt-3">
-        <ButtonLink path="/">Exercises</ButtonLink>
-        <ButtonLink path="/admin">Admin</ButtonLink>
+        <LinkButton path="/">Exercises</LinkButton>
+        <LinkButton path="/admin">Admin</LinkButton>
       </nav>
       <hr />
     </>

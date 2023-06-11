@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-const ButtonLink = ({ path, children }) => {
+const LinkButton = ({ path, children }) => {
   const location = useLocation();
   const isActive = location.pathname === path;
 
@@ -15,4 +15,4 @@ const ButtonLink = ({ path, children }) => {
   )
 }
 
-export default ButtonLink;
+export default LinkButton;
