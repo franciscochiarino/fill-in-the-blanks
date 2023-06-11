@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { db } from '../../../firebaseConfig';
+import { collection, addDoc } from 'firebase/firestore';
+
 import Text from '../../atoms/Text';
 import SubmitButton from '../../atoms/SubmitButton';
 
@@ -6,14 +9,35 @@ const NewStory = () => {
   const [headline, setHeadline] = useState('');
   const [story, setStory] = useState('');
   const [answers, setAnswers] = useState('');
+  const storiesRef = collection(db, 'stories');
 
-  const handleSubmit = (event) => {};
+  const createStory = async () => {
+    const answersArray = answers.split(', ');
+    const answersObject = {};
+
+    for (const i in answersArray) {
+      answersObject[`blank${i}`] = answersArray[i];
+    }
+
+    const storyObject = {
+      headline,
+      text: story.split('_blank_'),
+      answers: answersObject
+    };
+
+    await addDoc(storiesRef, storyObject);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    createStory();
+  };
 
   return (
     <div className="mb-6">
       <Text.SubHeading>New Story</Text.SubHeading>
       <p className="mb-4">
-        Use <i>_blank_</i> to indicate blank spaces.
+        Use <i>_blank_</i> to indicate blank spaces. Stories can't have blank spaces at the beginning or end.
       </p>
 
       <form onSubmit={handleSubmit}>
@@ -42,6 +66,9 @@ const NewStory = () => {
 
         <div className="field">
           <label className="label">Answers</label>
+          <p className="mb-4">
+            Separate answers with commas.
+          </p>
           <div className="control">
             <input
               type="text"

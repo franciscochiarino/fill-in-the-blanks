@@ -22,17 +22,20 @@ const Sentence = ({ sentence }) => {
 
   return (
     <>
-      <section className="mb-6">
+      <div className="mb-3">
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+          <div className="mb-4 is-flex is-align-items-center">
             <Text.Span>{ sentence.sentence[0] }</Text.Span>
-            <Input onChange={handleOnChange} />
+              <Input onChange={handleOnChange} />
             <Text.Span>{ sentence.sentence[1] }</Text.Span>
+
+            <div className="ml-4">
+              <SubmitButton />
+            </div>
           </div>
 
-          <SubmitButton />
         </form>
-      </section>
+      </div>
     </>
   )
 }

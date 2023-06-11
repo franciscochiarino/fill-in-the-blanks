@@ -28,19 +28,23 @@ const Exercises = () => {
 
   return (
     <>
-      <Text.SubHeading>Sentences</Text.SubHeading>
-      {sentences && (
-        sentences.map(sentence => (
-          <Sentence sentence={sentence} />
-        ))
-      )}
+      <section className="mb-6">
+        <Text.SubHeading>Sentences</Text.SubHeading>
+        {sentences && (
+          sentences.map(sentence => (
+            <Sentence key={sentence.id} sentence={sentence} />
+          ))
+        )}
+      </section>
 
-      <Text.SubHeading>Stories</Text.SubHeading>
-      {stories && (
-        stories.map(story => (
-          <Story story={story} />
-        ))
-      )}
+      <section className="mb-6">
+        <Text.SubHeading>Stories</Text.SubHeading>
+        {stories && (
+          stories.map(story => (
+            <Story key={story.id} story={story} />
+          ))
+        )}
+      </section>
     </>
   )
 }

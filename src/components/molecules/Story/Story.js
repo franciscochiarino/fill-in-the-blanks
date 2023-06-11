@@ -46,23 +46,25 @@ const Story = ({ story }) => {
 
   return (
     <>
-      <h3 className="is-size-4">{story.headline}</h3>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          { story.story.map((sentence, index) => {
-            return (
-              <>
-                <Text.Span key={index}>{sentence}</Text.Span>
-                {index !== story.story.length - 1 &&
-                  <Input onChange={handleOnChange} name={`blank${index}`} />
-                }
-              </>
-            )
-          })}
-        </div>
+      <div className="mb-5">
+        <h3 className="is-size-4">{story.headline}</h3>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            { story.text.map((sentence, index) => {
+              return (
+                <>
+                  <Text.Span>{sentence}</Text.Span>
+                  {index !== story.text.length - 1 &&
+                    <Input onChange={handleOnChange} name={`blank${index}`} />
+                  }
+                </>
+              )
+            })}
+          </div>
 
-        <SubmitButton />
-      </form>
+          <SubmitButton />
+        </form>
+      </div>
     </>
   )
 }
