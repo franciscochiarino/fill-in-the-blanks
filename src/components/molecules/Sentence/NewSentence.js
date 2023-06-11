@@ -8,6 +8,9 @@ const NewSentence = () => {
   return (
     <div className="mb-6">
       <Text.SubHeading>New Sentence</Text.SubHeading>
+      <p className="mb-4">
+        Use <i>_blank_</i> to indicate the blank space. Example: I <i>_blank_</i> to the store.
+      </p>
 
       <form onSubmit={handleSubmit}>
         <div className="columns">

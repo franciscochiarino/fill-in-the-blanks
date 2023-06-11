@@ -8,6 +8,9 @@ const NewStory = () => {
   return (
     <div className="mb-6">
       <Text.SubHeading>New Story</Text.SubHeading>
+      <p className="mb-4">
+        Use <i>_blank_</i> to indicate blank spaces.
+      </p>
 
       <form onSubmit={handleSubmit}>
         <div className="field">
