@@ -17,7 +17,13 @@ const Exercises = () => {
       setSentences(data.docs.map(doc => ({...doc.data()})))
     }
 
+    const getStories = async () => {
+      const data = await getDocs(collection(db, 'stories'));
+      setStories(data.docs.map(doc => ({...doc.data()})))
+    }
+
     getSentences();
+    getStories();
   }, [])
 
   return (
@@ -28,8 +34,13 @@ const Exercises = () => {
           <Sentence sentence={sentence} />
         ))
       )}
-      {/* <Sentence sentence={sentences[0]} /> */}
-      {/* <Story story={stories[0]} /> */}
+
+      <Text.SubHeading>Stories</Text.SubHeading>
+      {stories && (
+        stories.map(story => (
+          <Story story={story} />
+        ))
+      )}
     </>
   )
 }

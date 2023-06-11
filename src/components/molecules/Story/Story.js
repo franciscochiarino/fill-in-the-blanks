@@ -46,8 +46,6 @@ const Story = ({ story }) => {
 
   return (
     <>
-      <Text.SubHeading>Story</Text.SubHeading>
-
       <h3 className="is-size-4">{story.headline}</h3>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
