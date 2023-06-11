@@ -11,11 +11,12 @@ const NewSentence = () => {
   const sentencesRef = collection(db, 'sentences');
 
   const createSentence = async () => {
-
     await addDoc(sentencesRef, {
       sentence: sentence.split('_blank_'),
       answer
     });
+
+    alert('Sentence created!');
   };
 
   const handleSubmit = (event) => {
