@@ -2,8 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/molecules/Navbar';
-import Exercises from './components/templates/Exercises';
-import Admin from './components/templates/Admin';
+import Exercises from './components/pages/Exercises';
+import Admin from './components/pages/Admin';
 
 const App = () => {
   return (

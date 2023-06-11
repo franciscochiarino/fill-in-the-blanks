@@ -4,9 +4,9 @@ const Heading = ({ children }) => {
   )
 };
 
-const SubHeading = ({ text }) => {
+const SubHeading = ({ children }) => {
   return (
-    <h2 className="is-family-code is-size-3 mb-4">{text}</h2>
+    <h2 className="is-family-code is-size-3 mb-4">{children}</h2>
   )
 };
 
@@ -15,7 +15,6 @@ const Span = ({ children }) => {
     <span style={{ lineHeight: '2.2' }}>{children}</span>
   )
 };
-
 
 const Text = {}
 Text.Heading = Heading;

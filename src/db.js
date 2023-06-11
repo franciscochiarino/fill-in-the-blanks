@@ -7,6 +7,7 @@ export const sentences = [
 
 export const stories = [
   {
+    headline: "The Scarecrow",
     story: [
       "Once upon a time, in a quiet village nestled amidst rolling hills, there lived a lonely scarecrow",
       "Oliver. Standing tall in the middle of a vast field, he watched the seasons change and the crops",

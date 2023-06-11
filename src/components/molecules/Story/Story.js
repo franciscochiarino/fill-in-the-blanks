@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Text from '../atoms/Text';
-import Input from '../atoms/Input';
+import Text from '../../atoms/Text';
+import Input from '../../atoms/Input';
+import SubmitButton from '../../atoms/SubmitButton';
 
 const Story = ({ story }) => {
   const [inputs, setInputs] = useState({});
@@ -38,14 +39,16 @@ const Story = ({ story }) => {
     })
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     handleAnswer();
   };
 
   return (
     <>
-      <Text.SubHeading text="Story" />
+      <Text.SubHeading>Story</Text.SubHeading>
+
+      <h3 className="is-size-4">{story.headline}</h3>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           { story.story.map((sentence, index) => {
@@ -59,7 +62,8 @@ const Story = ({ story }) => {
             )
           })}
         </div>
-        <button type="submit" className="button is-primary" value="Submit">Submit</button>
+
+        <SubmitButton />
       </form>
     </>
   )

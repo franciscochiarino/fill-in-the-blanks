@@ -1,7 +1,7 @@
 import React from 'react';
 import { sentences, stories } from '../../db';
-import Sentence from '../molecules/Sentence';
-import Story from '../molecules/Story';
+import Sentence from '../molecules/Sentence/Sentence';
+import Story from '../molecules/Story/Story';
 
 const Exercises = () => {
   return (
