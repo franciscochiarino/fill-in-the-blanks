@@ -22,19 +22,21 @@ const Sentence = ({ sentence }) => {
 
   return (
     <>
-      <section className="mb-6">
-        <Text.SubHeading>Sentence</Text.SubHeading>
+      { sentence && (
+        <section className="mb-6">
+          <Text.SubHeading>Sentence</Text.SubHeading>
 
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <Text.Span>{ sentence.sentence[0] }</Text.Span>
-            <Input onChange={handleOnChange} />
-            <Text.Span>{ sentence.sentence[1] }</Text.Span>
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <Text.Span>{ sentence.sentence[0] }</Text.Span>
+              <Input onChange={handleOnChange} />
+              <Text.Span>{ sentence.sentence[1] }</Text.Span>
+            </div>
 
-          <SubmitButton />
-        </form>
-      </section>
+            <SubmitButton />
+          </form>
+        </section>
+      )}
     </>
   )
 }
