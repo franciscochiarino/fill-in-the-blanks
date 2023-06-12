@@ -74,7 +74,7 @@ const NewStory = () => {
         <div className="field">
           <label className="label">Answers</label>
           <p className="mb-4">
-            Separate answers with commas.
+            Separate answers with a comma and a space. Example: <i>answer1, answer2, answer3</i>
           </p>
           <div className="control">
             <input
