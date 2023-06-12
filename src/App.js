@@ -2,12 +2,13 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/molecules/Navbar';
+import Footer from './components/molecules/Footer';
 import Exercises from './components/pages/Exercises';
 import Admin from './components/pages/Admin';
 
 const App = () => {
   return (
-    <div className="has-background-white mb-6">
+    <div className="has-background-white">
       <Navbar />
 
       <div className="columns">
@@ -18,6 +19,8 @@ const App = () => {
           </Routes>
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }
